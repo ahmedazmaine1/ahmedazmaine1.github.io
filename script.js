@@ -1,0 +1,103 @@
+/*let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+let sections = document.querySelectorAll('section');
+let navLinks = document.querySelectorAll('header nav a');
+
+window.onscroll = () => {
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 150;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+
+        if (top >= offset && top < offset + height) {
+            navLinks.forEach(links => {
+                links.classList.remove('active');
+                document.querySelector('header nav a[href*="' + id + '"]').classList.add('active');
+            });
+        }
+    });
+};
+
+
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+};*/
+
+// --- Menu Toggle ---
+const menuIcon = document.querySelector('#menu-icon');
+const navbar = document.querySelector('.navbar');
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('header nav a');
+
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+};
+
+// --- Scroll Navigation Highlight ---
+window.onscroll = () => {
+    const scrollY = window.scrollY;
+
+    sections.forEach(section => {
+        const offset = section.offsetTop - 150;
+        const height = section.offsetHeight;
+        const id = section.getAttribute('id');
+
+        if (scrollY >= offset && scrollY < offset + height) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                const currentLink = document.querySelector('header nav a[href*="' + id + '"]');
+                if (currentLink) {
+                    currentLink.classList.add('active');
+                }
+            });
+        }
+    });
+};
+
+// --- Typing Animation ---
+const roles = [
+    "Full Stack Web Developer",
+    "Frontend Designer",
+    "UI / UX Designer",
+    "Web Developer",
+    "Software Tester"
+];
+
+let index = 0;
+let charIndex = 0;
+let typingSpeed = 100;
+let erasingSpeed = 50;
+let delayBetween = 2000;
+const typedText = document.getElementById("typed-text");
+
+function type() {
+    if (charIndex < roles[index].length) {
+        typedText.textContent += roles[index].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingSpeed);
+    } else {
+        setTimeout(erase, delayBetween);
+    }
+}
+
+function erase() {
+    if (charIndex > 0) {
+        typedText.textContent = roles[index].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, erasingSpeed);
+    } else {
+        index = (index + 1) % roles.length;
+        setTimeout(type, 500);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (typedText) {
+        setTimeout(type, 1000);
+    }
+});
+
+
