@@ -693,6 +693,7 @@ span{
             word-wrap: break-word;
             white-space: normal;
             text-align: left;
+            padding: 0 0rem;
         }
     
         .home-content p {
@@ -700,6 +701,7 @@ span{
             line-height: 2.2rem;
             text-align: left;
             margin-top: 1rem;
+            padding: 0 0rem;
         }
     
         .home-content {
