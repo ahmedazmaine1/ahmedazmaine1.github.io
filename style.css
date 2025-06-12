@@ -433,7 +433,7 @@ span{
     border: 5px solid transparent;
     cursor: pointer;
     transition: 0.4s ease-in-out;
-    display: center;
+    display: flex;
     min-height: 320px;
     display: flex;
     flex-direction: column;
