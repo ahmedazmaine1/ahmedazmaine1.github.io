@@ -272,6 +272,30 @@ span{
     margin: 5rem 0;
 }
 
+.about {
+    padding: 8rem 12% 4rem;
+    background: var(--second-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+.about h3 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    max-width: 900px;
+}
+.about p {
+    font-size: 2.5rem;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 1000px;
+    margin-bottom: 2rem;
+}
+
 .education{
     padding: 100px 15px;
     background: var(--second-bg-color);
@@ -799,7 +823,19 @@ span{
         .service-info p {
             font-size: 1.4rem;
         }
+        .about {
+            padding: 5rem 2rem;
+        }
+    
+        .about h3 {
+            font-size: 1.8rem;
+        }
+    
+        .about p {
+            font-size: 1.4rem;
+        }
     }
+
 
 
     
