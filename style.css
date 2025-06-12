@@ -418,18 +418,29 @@ span{
 
 .services-container{
     display: grid;
-    grid-template-columns: repeat(2 ,1fr);
+    /*grid-template-columns: repeat(2 ,1fr);*/
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     align-items: center;
     gap: 2.5rem;
+    
+
 }
 
 .service-box{
     background-color: var(--main-color);
-    height: 300px;
+    height: auto;
     border-radius: 3rem;
     border: 5px solid transparent;
     cursor: pointer;
     transition: 0.4s ease-in-out;
+    display:flex;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 3rem;
+    min-height:100%;
+    box-sizing: border-box;
 }
 
 .service-box:hover{
@@ -443,7 +454,7 @@ span{
     flex-direction: column;
     text-align: left;
     max-height: 200px;
-    justify-content: left;
+    justify-content: flex-start;
     align-items:  baseline;
     padding: 5rem 5rem;
 
@@ -452,17 +463,24 @@ span{
 
 
 .service-info h4{
-    font-size: 3rem;
+    font-size: 2.4rem;
     font-weight: 800;
-    line-height: 2;
+    line-height: 1.5;
 }
 
 .service-info p{
     font-size: 1.6rem;
     font-weight: 600;
-    max-height: 100px;
-    line-height: 1.7;
+    max-height: 1.8;
+    line-height: 1.1;
     margin: auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    text-align: left;
+    height: auto;
+    visibility: visible;
+
 
 }
 
@@ -773,7 +791,17 @@ span{
             height: auto;
             margin-top: 2rem;
         }
+        .services-container {
+            grid-template-columns: 1fr;
+            padding: 0 2rem;
+        }
+    
+        .service-info p {
+            font-size: 1.4rem;
+        }
     }
+
+
     
     
     
