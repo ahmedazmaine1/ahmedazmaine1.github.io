@@ -9,12 +9,19 @@
     font-family: "Poppins", sans-serif;
 }
 :root{
+    --bg-color: #081b29;
+    --second-bg-color: #233a4a;
+    --text-color: white;
+    --main-color: #45cae8;
+
+}
+.dark-theme {
     --bg-color: #080808;
     --second-bg-color: #131313;
     --text-color: white;
     --main-color: #00ffee;
-
 }
+  
 
 html{
     font-size: 60%;
@@ -36,6 +43,11 @@ body{
     justify-content:space-between;
     align-items: center;
     z-index: 5;
+}
+.right-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 }
 
 .logo{
@@ -786,7 +798,17 @@ span{
     .services-container {
         grid-template-columns: repeat(1, 1fr);
     }
-
+    .right-header {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+      }
+    
+      .theme-toggle-label {
+        font-size: 2.8rem;
+      }
+    
+}
     @media (max-width: 768px) {
         .home-content h4.text-animation {
             font-size: 2.2rem;
@@ -815,6 +837,7 @@ span{
             height: auto;
             margin-top: 2rem;
         }
+    
         .services-container {
             grid-template-columns: 1fr;
             padding: 0 2rem;
@@ -823,6 +846,7 @@ span{
         .service-info p {
             font-size: 1.4rem;
         }
+    
         .about {
             padding: 5rem 2rem;
         }
@@ -835,15 +859,33 @@ span{
             font-size: 1.4rem;
         }
     }
-
-
+    
+    /* ✅ Theme toggle styling - move this OUTSIDE media query */
+    #theme-toggle {
+        display: none;
+    }
+    
+    .theme-toggle-label {
+        cursor: pointer;
+        font-size: 2.4rem;
+        color: var(--main-color);
+        margin-left: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .theme-toggle-label .bx-sun {
+        display: none;
+    }
+    
+    .dark-theme .theme-toggle-label .bx-sun {
+        display: inline;
+    }
+    
+    .dark-theme .theme-toggle-label .bx-moon {
+        display: none;
+    }
+   
 
     
-    
-    
-}
-
-
-
-
-

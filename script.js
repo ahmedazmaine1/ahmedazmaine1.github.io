@@ -19,15 +19,17 @@ window.onscroll = () => {
         const id = section.getAttribute('id');
 
         if (scrollY >= offset && scrollY < offset + height) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                const currentLink = document.querySelector('header nav a[href*="' + id + '"]');
-                if (currentLink) {
-                    currentLink.classList.add('active');
-                }
-            });
+            navLinks.forEach(link => link.classList.remove('active'));
+            const currentLink = document.querySelector('header nav a[href*="' + id + '"]');
+            if (currentLink) {
+                currentLink.classList.add('active');
+            }
         }
     });
+
+    // Close navbar when scrolling (for mobile)
+    menuIcon.classList.remove('bx-x');
+    navbar.classList.remove('active');
 };
 
 // --- Typing Animation ---
@@ -71,6 +73,21 @@ document.addEventListener("DOMContentLoaded", () => {
     if (typedText) {
         setTimeout(type, 1000);
     }
+
+    // Theme toggle initialization
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Load saved theme from localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-theme');
+        themeToggle.checked = true;
+    }
+
+    // Theme toggle switch
+    themeToggle.addEventListener('change', () => {
+        body.classList.toggle('dark-theme');
+        const theme = body.classList.contains('dark-theme') ? 'dark' : 'light';
+        localStorage.setItem('theme', theme);
+    });
 });
-
-
