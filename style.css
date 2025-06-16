@@ -602,7 +602,7 @@ span{
     color: white;
 }
 
-.contact from{
+.contact form {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -611,14 +611,14 @@ span{
     text-align: center;
 }
 
-.contact from .input-box{
+.contact form .input-box {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.contact from .input-box input,
-.contact from textarea {
+.contact form .input-box input,
+.contact form textarea {
     width:100%;
     padding: 2.5rem;
     font-size: 1.8rem;
@@ -630,9 +630,10 @@ span{
     resize: none;
 }
 
-.contact from .btn{
+.contact form .btn {
     margin-top: 2rem;
 }
+
 
 .footer{
     position: relative ;
