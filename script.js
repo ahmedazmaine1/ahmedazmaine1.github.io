@@ -4,6 +4,7 @@ const navbar = document.querySelector('.navbar');
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('header nav a');
 
+
 menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
@@ -62,7 +63,7 @@ function erase() {
     if (charIndex > 0) {
         typedText.textContent = roles[index].substring(0, charIndex - 1);
         charIndex--;
-        setTimeout(erase, erasingSpeed);
+        setTimeout(erase, typingSpeed);
     } else {
         index = (index + 1) % roles.length;
         setTimeout(type, 500);
