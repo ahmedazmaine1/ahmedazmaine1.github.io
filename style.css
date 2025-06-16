@@ -602,7 +602,7 @@ span{
     color: white;
 }
 
-.contact form {
+.contact form{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -611,7 +611,7 @@ span{
     text-align: center;
 }
 
-.contact form .input-box {
+.contact form .input-box{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -630,10 +630,9 @@ span{
     resize: none;
 }
 
-.contact form .btn {
+.contact form .btn{
     margin-top: 2rem;
 }
-
 
 .footer{
     position: relative ;
