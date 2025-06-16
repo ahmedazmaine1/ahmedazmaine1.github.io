@@ -12,14 +12,14 @@
     --bg-color: #081b29;
     --second-bg-color: #233a4a;
     --text-color: white;
-    --main-color: #45cae8;
+    --main-color: hsl(192, 78%, 65%);
 
 }
 .dark-theme {
     --bg-color: #080808;
     --second-bg-color: #131313;
     --text-color: white;
-    --main-color: #00ffee;
+    --main-color:  hsl(192, 78%, 65%);
 }
   
 
@@ -911,6 +911,3 @@ span{
     .dark-theme .theme-toggle-label .bx-moon {
         display: none;
     }
-   
-
-    
