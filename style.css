@@ -21,7 +21,7 @@
     --text-color: white;
     --main-color:  hsl(192, 78%, 65%);
 }
-  
+
 
 html{
     font-size: 60%;
@@ -772,7 +772,7 @@ span{
         color: white;
     }
     .navbar {
-    display: none; 
+    display: none;
     position: absolute;
     top: 100%;
     right: 0;
@@ -879,7 +879,7 @@ span{
         .home-img img {
             width: 70vw;
             border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-          }
+        }
         
         
         
