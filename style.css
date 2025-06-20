@@ -61,7 +61,7 @@
     }
     
     .dark-theme .background-wrapper::before {
-        background-image: url("spaceNeedle.jpg");
+        background-image: url("Space.jpg");
     }
     
     .header {
