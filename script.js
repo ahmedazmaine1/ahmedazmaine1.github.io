@@ -4,7 +4,6 @@ const navbar = document.querySelector('.navbar');
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('header nav a');
 
-
 menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
@@ -45,7 +44,7 @@ const roles = [
 let index = 0;
 let charIndex = 0;
 let typingSpeed = 100;
-let erasingSpeed = 50;
+let erasingSpeed = 100;
 let delayBetween = 2000;
 const typedText = document.getElementById("typed-text");
 
@@ -63,32 +62,46 @@ function erase() {
     if (charIndex > 0) {
         typedText.textContent = roles[index].substring(0, charIndex - 1);
         charIndex--;
-        setTimeout(erase, typingSpeed);
+        setTimeout(erase, erasingSpeed);
     } else {
         index = (index + 1) % roles.length;
         setTimeout(type, 500);
     }
 }
 
+// --- Theme Toggle ---
 document.addEventListener("DOMContentLoaded", () => {
     if (typedText) {
         setTimeout(type, 1000);
     }
 
-    // Theme toggle initialization
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
+    const sunIcon = document.getElementById('sun-icon');
+    const moonIcon = document.getElementById('moon-icon');
+    const themeLabel = document.getElementById('theme-toggle-label');
 
-    // Load saved theme from localStorage
+    function updateIcons() {
+        if (body.classList.contains('dark-theme')) {
+            sunIcon.style.display = 'inline';
+            moonIcon.style.display = 'none';
+        } else {
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'inline';
+        }
+    }
+
+    // Load saved theme
     if (localStorage.getItem('theme') === 'dark') {
         body.classList.add('dark-theme');
         themeToggle.checked = true;
+        updateIcons();
     }
 
-    // Theme toggle switch
-    themeToggle.addEventListener('change', () => {
+    themeLabel.addEventListener('click', () => {
         body.classList.toggle('dark-theme');
         const theme = body.classList.contains('dark-theme') ? 'dark' : 'light';
         localStorage.setItem('theme', theme);
+        updateIcons();
     });
 });
